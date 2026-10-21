@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="hy">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Robot Battle — 20 Levels</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="game">
+    <header>
+      <h1>🤖 ROBOT BATTLE</h1>
+      <p>Պայքարիր և նվաճիր բոլոր 20 մակարդակները</p>
+    </header>
+
+    <section class="hud">
+      <div>❤️ Կյանք <strong id="health">100</strong></div>
+      <div>🪙 Մետաղադրամներ <strong id="coins">0</strong></div>
+      <div>⭐ Մակարդակ <strong id="level">1 / 20</strong></div>
+      <div>🎯 Միավոր <strong id="score">0</strong></div>
+    </section>
+
+    <div class="bars">
+      <div class="bar">
+        <span>Քո ռոբոտը</span>
+        <div class="track"><div id="healthBar"></div></div>
+      </div>
+      <div class="bar">
+        <span id="enemyLabel">Թշնամի</span>
+        <div class="track"><div id="enemyBar"></div></div>
+      </div>
+    </div>
+
+    <canvas id="gameCanvas" width="960" height="540"></canvas>
+
+    <section class="actions">
+      <button id="startBtn">⚔️ ՍԿՍԵԼ</button>
+      <button id="shopBtn">🔧 UPGRADES</button>
+      <button id="pauseBtn">⏸ ԴԱԴԱՐ</button>
+    </section>
+
+    <section id="shop" class="panel hidden">
+      <h2>🔧 UPGRADE SHOP</h2>
+      <p>Մետաղադրամներ՝ <strong id="shopCoins">0</strong></p>
+      <div class="shop-grid">
+        <button data-upgrade="weapon">🔫 Զենքի ուժ <span id="weaponPrice"></span></button>
+        <button data-upgrade="armor">🛡️ Զրահ <span id="armorPrice"></span></button>
+        <button data-upgrade="speed">⚡ Արագություն <span id="speedPrice"></span></button>
+        <button data-upgrade="heal">❤️ Վերականգնել կյանքը <span id="healPrice"></span></button>
+      </div>
+      <button id="closeShop">ՓԱԿԵԼ</button>
+    </section>
+
+    <section id="message" class="panel">
+      <h2 id="messageTitle">ՄԱՐՏԻ ՊԱՏՐԱՍՏ</h2>
+      <p id="messageText">Հաղթիր թշնամիներին։ Ամեն 5-րդ մակարդակում քեզ սպասում է Boss-ը։</p>
+    </section>
+
+    <p class="help">
+      Համակարգիչ՝ A / D կամ ← / → շարժվելու համար, SPACE՝ կրակելու,
+      P՝ դադար։ Հեռախոսում օգտագործիր ներքևի կոճակները։
+    </p>
+
+    <div class="mobile-controls">
+      <button id="leftBtn">◀</button>
+      <button id="fireBtn">🔥 ԿՐԱԿ</button>
+      <button id="rightBtn">▶</button>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
